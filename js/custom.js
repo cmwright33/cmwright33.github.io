@@ -20,7 +20,7 @@
     $('#me').hide().delay(900).fadeIn(1000);
     $('#resume').hide().delay(1100).fadeIn(1000);
 
-
+    $('#header_container').slideDown("slow");
     // $('#me').attr('background-image: url(images/me.jpg)');
 
     // $(".hex").mouseover(function(){

@@ -94,7 +94,6 @@ a:hover {
 		-moz-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
 		-o-backface-visibility: hidden;
-		backface-visibility: hidden;
 	}
 
 	.hex .corner-1 {
@@ -124,13 +123,11 @@ a:hover {
 	  top:0;
 	  left: 0;
 	  z-index: 1;
-	  background: inherit;
 	  background-repeat:no-repeat;
 		-webkit-backface-visibility: hidden;
 		-moz-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
 		-o-backface-visibility: hidden;
-		backface-visibility: hidden;
 	}
 
 
