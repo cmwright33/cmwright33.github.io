@@ -243,17 +243,18 @@
       });
     }
 
-    // function outterHexOpacityExpandHex(divName) {
+    // function opacityExpandHex(divName) {
     //  $(divName).css({
     //         'opacity': 0.4,
     //         'background-color': '#47454b',
-    //         width: function( index, value ) {
-    //           return parseFloat( value ) * 1.25;
-    //         },
-    //         height: function( index, value ) {
-    //           return parseFloat( value ) * 1.25;
-    //         }
+    //         'border-radius': "50% 50% 50% 50%" ,
     //   });
+    //  $(" .corner-1").css({
+    //         'width': '0px',
+    //  });
+    //   $(" .corner-2").css({
+    //         'width': '0px',
+    //  });
     // }
 
     function whiteOpacityExpandHex(divName) {
@@ -271,7 +272,14 @@
      $(divName).css({'opacity': 1.0,
                     "width": "150px",
                     "height": "86px",
+                    "border-radius": '0%',
                     });
+     //  $(".corner-1").css({
+     //        'width': '150px',
+     // });
+     //  $(".corner-2").css({
+     //        'width': '150px',
+     // });
    }
 // height: 107.5px;
 // width: 187.5px;
