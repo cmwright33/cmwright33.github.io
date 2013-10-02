@@ -20,7 +20,7 @@
     $('#me').hide().delay(900).fadeIn(1000);
     $('#resume').hide().delay(1100).fadeIn(1000);
 
-    $('#header_container').slideDown("slow");
+    $('#header_container').hide().slideDown("slow");
     // $('#me').attr('background-image: url(images/me.jpg)');
 
     // $(".hex").mouseover(function(){
@@ -34,9 +34,9 @@
     //   (this).css('background-image','url(images/44l.png)');
     // });
 
-    $.get('ajax.html', function(data){
-          modal.open({content: data});
-        });
+    // $.get('ajax.html', function(data){
+    //       modal.open({content: data});
+    //     });
 
 
         $('#project-1').on('click', function(){
@@ -71,13 +71,13 @@
                $('#me').attr("style", "background-image: url(images/me.jpg); display: block;");
                  $('#me').removeAttr('style');
                $('#me').attr("style", "background-image: url(images/44l.png); display: block;");
-
             }
+
           });
 
           // click on needs to be changed
           //sort and highlight the projects
-          $("#cool-projects").on('click', function() {
+          $("#cool-projects").on('click', function(e) {
             // do fading 3 times
             for(i=0;i<3;i++) {
               $('#project-1').fadeTo('slow', 0.5).fadeTo('slow', 1.0);
@@ -85,11 +85,10 @@
               $('#project-3').fadeTo('slow', 0.5).fadeTo('slow', 1.0);
               $('#empty-space-1').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
               $('#empty-space-2').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
-
             }
           });
 
-            $("#contact-me").on('click', function() {
+            $("#contact-me").on('click', function(e) {
             // do fading 3 times
             for(i=0;i<3;i++) {
               $('#contact-me-linkdin').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
@@ -97,17 +96,18 @@
               $('#contact-me-twitter').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
               $('#contact').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
             }
+
           });
 
            // click on needs to be changed
-          $("#about").on('click', function() {
+          $("#about").on('click', function(e) {
             // do fading 3 times
             for(i=0;i<3;i++) {
               $('#me').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
               $('#resume').fadeTo('slow', 0.25).fadeTo('slow', 1.0);
-
             }
           });
+
 
           // on click reveal that beautiful face and some text about me
              $('#me').on('click', function(){
@@ -130,43 +130,43 @@
 
         // 11 diffrent text ids linking each to the text that will be uncovered on hover
          $("#contact-me-linkdin").mouseover(function(){
-            $(this).toggleClass("hover");
+           whiteOpacityExpandHex(this);
              $('#background-text-1').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-1').hide();
          });
 
          $("#project-2").mouseover(function(){
-            $(this).toggleClass("hover");
+            opacityExpandHex(this);
              $('#background-text-2').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-2').hide();
          });
 
         $("#empty-space-1").mouseover(function(){
-            $(this).toggleClass("hover");
+            opacityExpandHex(this);
              $('#background-text-3').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-3').hide();
         });
 
 
         $("#contact-me-github").mouseover(function(){
-            $(this).toggleClass("hover");
+            $(this).css('opacity', 0.4);
              $('#background-text-4').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-4').hide();
         });
 
           $("#empty-space-2").mouseover(function(){
-            $(this).toggleClass("hover");
+            opacityExpandHex(this);
              $('#background-text-5').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-5').hide();
         });
 
@@ -185,50 +185,99 @@
 
 
         $("#project-1").mouseover(function(){
-            $(this).toggleClass("hover");
+            opacityExpandHex(this);
              $('#background-text-7').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+           normalizeHex(this);
              $('#background-text-7').hide();
         });
 
         $("#resume").mouseover(function(){
-            $(this).toggleClass("hover");
+            opacityExpandHex(this);
              $('#background-text-8').show();
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+            normalizeHex(this);
              $('#background-text-8').hide();
         });
 
         $("#contact").mouseover(function(){
-            $(this).toggleClass("hover");
+
              $('#background-text-9').show();
+             opacityExpandHex(this);
         }).mouseout(function(){
-            $(this).toggleClass("hover");
              $('#background-text-9').hide();
+             normalizeHex(this);
         });
 
         $("#contact-me-twitter").mouseover(function(){
-            $(this).toggleClass("hover");
              $('#background-text-10').show();
+           whiteOpacityExpandHex(this);
         }).mouseout(function(){
-            $(this).toggleClass("hover");
              $('#background-text-10').hide();
+             normalizeHex(this);
         });
 
         $("#project-3").mouseover(function(){
-            $(this).toggleClass("hover");
              $('#background-text-11').show();
+            opacityExpandHex(this);
         }).mouseout(function(){
-            $(this).toggleClass("hover");
+             normalizeHex(this);
              $('#background-text-11').hide();
+
         });
 
 
  });
 
+    function opacityExpandHex(divName) {
+     $(divName).css({
 
+            'opacity': 0.4,
+            'background-color': '#47454b',
+            width: function( index, value ) {
+              return parseFloat( value ) * 1.25;
+            },
+            height: function( index, value ) {
+              return parseFloat( value ) * 1.25;
+            },
+      });
+     debugger;
+    }
 
+    // function outterHexOpacityExpandHex(divName) {
+    //  $(divName).css({
+    //         'opacity': 0.4,
+    //         'background-color': '#47454b',
+    //         width: function( index, value ) {
+    //           return parseFloat( value ) * 1.25;
+    //         },
+    //         height: function( index, value ) {
+    //           return parseFloat( value ) * 1.25;
+    //         }
+    //   });
+    // }
+
+    function whiteOpacityExpandHex(divName) {
+     $(divName).css({
+            'opacity': 0.4,
+            width: function( index, value ) {
+              return parseFloat( value ) * 1.25;
+            },
+            height: function( index, value ) {
+              return parseFloat( value ) * 1.25;
+            }
+      });
+    }
+  function normalizeHex(divName) {
+     $(divName).css({'opacity': 1.0,
+                    "width": "150px",
+                    "height": "86px",
+                    });
+   }
+// height: 107.5px;
+// width: 187.5px;
+
+//Create a custom modal object
 
 
   var modal = (function(){
