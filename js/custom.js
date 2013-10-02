@@ -241,7 +241,6 @@
               return parseFloat( value ) * 1.25;
             },
       });
-     debugger;
     }
 
     // function outterHexOpacityExpandHex(divName) {
