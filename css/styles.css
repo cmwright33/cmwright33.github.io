@@ -2,7 +2,6 @@
 body {
 	font-family:arial;
 	font-size:12px;
-	/*background: #f6f7f0;*/
 	background-image:url(bg3.png);
 	background-size: 100%;
 	margin:0;
@@ -63,11 +62,13 @@ a:hover {
 	margin:25px 5px;
 	text-align:center;
 	zoom:1;
+
 }
 
 
 	.hex.hex-gap {
 		margin-left: 86px;
+
 	}
 
 	.hex a {
@@ -221,7 +222,7 @@ a:hover {
 
 #close {
     position:absolute;
-    background:url(close.png) ;
+    background:url(../css/close.png) ;
     width:24px;
     height:27px;
     display:block;
