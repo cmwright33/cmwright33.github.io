@@ -19,6 +19,8 @@ $(document).ready(function(){
   }
   });
 
+setTimeout(function(){
+
 
 var pie = new d3pie("pieChart", {
   "header": {
@@ -119,6 +121,10 @@ var pie = new d3pie("pieChart", {
   },
   "callbacks": {}
 });
+
+
+},4000);
+
 
 });
 

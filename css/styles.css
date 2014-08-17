@@ -1,14 +1,24 @@
 
 
 #center_title {
-	background: transparent;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border:1px solid #f00;
+  border: 1px solid #000;
   position: absolute;
   top: 152px;
-	left: 194px;
+  left: 194px;
+  background: #474747;
+  -webkit-animation-duration: 2s;
+  text-align: center;
+  line-height: 6;
+  font-size: 35px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
 }
 
 #pieChart{
@@ -19,10 +29,16 @@
 }
 
 .weather{
-	position: relative;
-	left: 0px
+	position: absolute;
+	right: 20px;
+	top: 20px;
 }
 
 img#w_icon {
-width: 22px;
+	width: 22px;
+	vertical-align: bottom;
+}
+
+.weather div{
+	display: inline-block;
 }
