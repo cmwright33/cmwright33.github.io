@@ -47,7 +47,7 @@ function handleDrop(e) {
   if (dragSrcEl != this) {
     // Set the source column's HTML to the HTML of the column we dropped on.
     dragSrcEl.innerHTML = this.innerHTML;
-    $(this) = e.dataTransfer.getData('text/html');
+    $(this).dataTransfer.getData('text/html');
   }
 
   return false;
