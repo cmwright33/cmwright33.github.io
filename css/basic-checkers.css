@@ -1,0 +1,91 @@
+
+.checkers-container {
+  position: relative;
+  margin: auto;
+  width: 800px;
+  height: 800px;
+}
+
+
+ul {
+height: inherit;
+width: inherit;
+position: absolute;
+padding: 0;
+}
+
+
+
+
+.row-1:nth-child(2n+1){
+  background: red;
+}
+
+.row-1:nth-child(2n){
+  background: black;
+}
+
+.row-2:nth-child(2n+1){
+  background: black;
+}
+
+.row-2:nth-child(2n){
+  background: red;
+}
+
+.row-3:nth-child(2n+1){
+  background: red;
+}
+
+.row-3:nth-child(2n){
+  background: black;
+}
+
+.row-4:nth-child(2n+1){
+  background: black;
+}
+
+.row-4:nth-child(2n){
+  background: red;
+}
+
+.row-5:nth-child(2n+1){
+  background: red;
+}
+
+.row-5:nth-child(2n){
+  background: black;
+}
+
+.row-6:nth-child(2n+1){
+  background: black;
+}
+
+.row-6:nth-child(2n){
+  background: red;
+}
+
+.row-7:nth-child(2n+1){
+  background: red;
+}
+
+.row-7:nth-child(2n){
+  background: black;
+}
+
+.row-8:nth-child(2n+1){
+  background: black;
+}
+
+.row-8:nth-child(2n){
+  background: red;
+}
+
+
+li{
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  float: left;
+  /*border: 1px solid #000;*/
+}
