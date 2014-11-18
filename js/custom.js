@@ -58,7 +58,8 @@ var pie = new d3pie("pieChart", {
       {
         "label": "",
         "value": 5,
-        "color": "#c3ccb2"
+        "color": "#c3ccb2",
+        "id": "second-label"
       },
       {
         "label": "",
