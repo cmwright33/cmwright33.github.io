@@ -55,21 +55,27 @@ if(navigator.geolocation){
 navigator.geolocation.getCurrentPosition(function(position) {
   var local = position.coords.latitude + ',' +position.coords.longitude;
    weather_url = "http://api.wunderground.com/api/eac3fd7e9d88b803/geolookup/conditions/q/"+ local +".json";
+   callWeather();
 });
 
 }else{
  weather_url = "http://api.wunderground.com/api/eac3fd7e9d88b803/geolookup/conditions/q/NY/New_York.json";
+ callWeather();
 }
+
+});
+
+function callWeather(){
   $.ajax({
   url : weather_url,
   dataType : "jsonp",
   success : function(parsed_json) {
-    parsedData = parsed_json
+
   var location = parsed_json['location']['city'];
 
   $('#w_location').html(location);
   var temp_f = parsed_json['current_observation']['temp_f'];
-  console.log(temp_f)
+
   $('#w_tempature').html(temp_f);
   var current_condition = parsed_json['current_observation']['icon_url'];
    $('#w_icon').attr("src" , current_condition);
@@ -77,10 +83,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
   }
   });
 
-
-});
-
-
+}
 
 
 
