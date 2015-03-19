@@ -90,6 +90,8 @@ function callWeather(){
 
 
 function loadWeatherReport(){
-  $('.weather').show();
-  $('.spinner').hide();
+  $('.whoops').on('animationend webkitAnimationEnd', function(){
+      $('.weather').show();
+      $('.spinner').hide();
+  });
 }
