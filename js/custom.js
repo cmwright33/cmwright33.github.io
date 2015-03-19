@@ -66,8 +66,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
   success : function(parsed_json) {
 
   var location = parsed_json['location']['city'];
+
   $('#w_location').html(location);
   var temp_f = parsed_json['current_observation']['temp_f'];
+  console.log(temp_f)
   $('#w_tempature').html(temp_f);
   var current_condition = parsed_json['current_observation']['icon_url'];
    $('#w_icon').attr("src" , current_condition);
