@@ -1,6 +1,6 @@
 
 var weather_url;
-
+var parsedData;
 $(document).ready(function(){
 
   // resizeBoxes();
@@ -64,7 +64,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
   url : weather_url,
   dataType : "jsonp",
   success : function(parsed_json) {
-
+    parsedData = parsed_json
   var location = parsed_json['location']['city'];
 
   $('#w_location').html(location);
