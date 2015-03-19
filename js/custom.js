@@ -1,6 +1,8 @@
 
 var weather_url;
 var parsedData;
+
+$('.weather').hide();
 $(document).ready(function(){
 
   // resizeBoxes();
