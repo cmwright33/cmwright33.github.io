@@ -5,6 +5,8 @@ var parsedData;
 $('.weather').hide();
 $(document).ready(function(){
 
+
+$('.whoops').on('animationend webkitAnimationEnd', loadWeatherReport);
   // resizeBoxes();
 
   // for(var i = 0; i < 8; i++){
@@ -92,8 +94,6 @@ function callWeather(){
 
 
 function loadWeatherReport(){
-  $('.whoops').on('animationend webkitAnimationEnd', function(){
       $('.weather').fadeIn(500);
       $('.spinner').fadeOut(500);
-  });
 }
