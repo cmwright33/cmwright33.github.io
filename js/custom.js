@@ -65,11 +65,6 @@ if(navigator.geolocation){
 
 });
 
-setTimeout()
-
- if(typeof weather_url === 'undefined'){
-
- }
 
 
 function callWeather(){
