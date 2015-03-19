@@ -82,10 +82,14 @@ function callWeather(){
   var current_condition = parsed_json['current_observation']['icon_url'];
    $('#w_icon').attr("src" , current_condition);
   // alert("Current temperature in " + location + " is: " + temp_f + " current conditions are: "+ current_condition);
+   setTimeout(loadWeatherReport, 100);
   }
   });
 
 }
 
 
-
+function loadWeatherReport(){
+  $('.weather').show();
+  $('.spinner').hide();
+}
