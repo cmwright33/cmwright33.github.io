@@ -3,6 +3,54 @@
 
 $(document).ready(function(){
 
+  // resizeBoxes();
+
+  // for(var i = 0; i < 8; i++){
+
+  //   $('.main-container').append("<div class='bounceInUp'><img src='http://lorempixel.com/400/200/'></div>");
+  //    // $('.main-container div').each(function(){
+  //    //    $(this).css({'-webkit-animation-duration': randomIntFromInterval(1, 5) + 's;',  'animation-duration': randomIntFromInterval(1, 5) + 's;'});
+  //    // });
+  // }
+
+// $( window ).resize(resizeBoxes);
+
+
+// function resizeBoxes(){
+//   var x = document.body.clientWidth/8;
+//   var differnce =  Math.floor(x) - 150;
+//   if(differnce > 0 ){
+//     $('.main-container div').each(function(){ $(this).css({
+//                                                           // 'margin-left': differnce,
+//                                                           'height': Math.floor(x),
+//                                                           'width': Math.floor(x)
+//                                                           });
+//     });
+
+//   }
+
+
+
+// }
+
+
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+
+/*
+
+var x = document.body.clientWidth/8
+var differnce =  Math.floor(x) - 150;
+if(differnce > 0 ){
+  $('.main-container div').each(function(){ $(this).css('margin-left', differnce) })
+}
+
+*/
+
+
+
 
   $.ajax({
   url : "http://api.wunderground.com/api/eac3fd7e9d88b803/geolookup/conditions/q/NY/New_York.json",
@@ -12,126 +60,15 @@ $(document).ready(function(){
   var location = parsed_json['location']['city'];
   $('#w_location').html(location);
   var temp_f = parsed_json['current_observation']['temp_f'];
-  $('#w_tempature').html(temp_f)
+  $('#w_tempature').html(temp_f);
   var current_condition = parsed_json['current_observation']['icon_url'];
    $('#w_icon').attr("src" , current_condition);
   // alert("Current temperature in " + location + " is: " + temp_f + " current conditions are: "+ current_condition);
   }
   });
 
-setTimeout(function(){
-
-
-var pie = new d3pie("pieChart", {
-  "header": {
-    "title": {
-      "fontSize": 34,
-      "font": "courier"
-    },
-    "subtitle": {
-      "color": "#999999",
-      "fontSize": 10,
-      "font": "courier"
-    },
-    "location": "pie-center",
-    "titleSubtitlePadding": 10
-  },
-  "footer": {
-    "color": "#999999",
-    "fontSize": 10,
-    "font": "open sans",
-    "location": "bottom-left"
-  },
-  "size": {
-    "canvasWidth": 590,
-    "pieInnerRadius": "55%",
-    "pieOuterRadius": "80%"
-  },
-  "data": {
-    "sortOrder": "label-desc",
-    "content": [
-      {
-        "label": "",
-        "value": 5,
-        "color": "#ccc8b2"
-      },
-      {
-        "label": "",
-        "value": 5,
-        "color": "#c3ccb2",
-        "id": "second-label"
-      },
-      {
-        "label": "",
-        "value": 5,
-        "color": "#ccb2b2"
-      },
-      {
-        "label": "",
-        "value": 5,
-        "color": "#b5ccb2"
-      },
-      {
-        "label": "",
-        "value": 5,
-        "color": "#b2ccbb"
-      },
-      {
-        "label": "",
-        "value": 5,
-        "color": "#b2ccc8"
-      }
-    ]
-  },
-  "labels": {
-    "outer": {
-      "format": "none",
-      "pieDistance": 20
-    },
-    "inner": {
-      "format": "none"
-    },
-    "mainLabel": {
-      "fontSize": 11
-    },
-    "percentage": {
-      "color": "#999999",
-      "fontSize": 11,
-      "decimalPlaces": 0
-    },
-    "value": {
-      "color": "#cccc43",
-      "fontSize": 11
-    },
-    "lines": {
-      "enabled": true,
-      "color": "#777777"
-    }
-  },
-  "effects": {
-    "pullOutSegmentOnClick": {
-      "effect": "linear",
-      "speed": 400,
-      "size": 8
-    }
-  },
-  "misc": {
-    "colors": {
-      "segmentStroke": "#000000"
-    }
-  },
-  "callbacks": {}
-});
-
-
-},4000);
-
 
 });
-
-
-
-
 
 
 

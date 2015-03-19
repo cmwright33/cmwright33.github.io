@@ -8,14 +8,16 @@ $(document).ready(function(){
   //   if( (incr > 1 && incr <= 8) && (incr % 2)  ){
   //     $(this).append("<div class='red-piece'></div>");
   //   }
-$('.red-piece').on('dragstart', handleDragStart).on('dragend', handleDragEnd);
-$('.black-piece').on('dragstart', handleDragStart).on('dragend', handleDragEnd);
+// $('.red-piece').on('dragstart', handleDragStart).on('dragend', handleDragEnd).on('dragend', handleDragEnd);;
+// $('.black-piece').on('dragstart', handleDragStart).on('dragend', handleDragEnd).on('dragend', handleDragEnd);;
 $('.red-piece').attr('draggable', true);
 $('.black-piece').attr('draggable', true);
   });
 
 
+$('.red-piece').each(function(index, el){
 
+ });
 
 
 
@@ -23,11 +25,12 @@ $('.black-piece').attr('draggable', true);
 
 
 function handleDragStart(e) {
-  console.log(e)
+
+var a = e.target.dataTransfer.setData("text", e.target.id);
   $(this).css('opacity', '0.4');  // this / e.target is the source node.
       e.dataTransfer.effectAllowed = 'copy';
-  var a = $(this).dataTransfer.setData('Text', this.id);
-  console.log(a)
+
+  console.log(a);
 }
 
 function handleDragEnd(e) {
@@ -44,11 +47,11 @@ function handleDrop(e) {
   }
 
   // Don't do anything if dropping the same column we're dragging.
-  if (dragSrcEl != this) {
+  // if (dragSrcEl != this) {
     // Set the source column's HTML to the HTML of the column we dropped on.
-    dragSrcEl.innerHTML = this.innerHTML;
-    $(this).dataTransfer.getData('text/html');
-  }
+    // dragSrcEl.innerHTML = this.innerHTML;
+    e.dataTransfer.getData('text/html');
+  // }
 
   return false;
 }
