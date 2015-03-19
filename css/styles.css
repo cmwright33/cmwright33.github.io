@@ -25,6 +25,14 @@ body{
   padding: 5% 3% 0% 3%;
 }
 
+.animated-box {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
 #center_title {
   width: 200px;
   height: 200px;
