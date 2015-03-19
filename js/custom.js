@@ -95,7 +95,7 @@ function callWeather(){
 
 function loadWeatherReport(){
   setTimeout(function(){
-      $('.weather').fadeIn(500);
+      $('.weather , .weather div').fadeIn(500);
       $('.spinner').fadeOut(500);
   }, 2000);
 

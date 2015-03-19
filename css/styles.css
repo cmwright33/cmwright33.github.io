@@ -66,6 +66,7 @@ body{
 	right: 20px;
 	top: 20px;*/
   color: #fff;
+  opacity: 0;
 }
 
 img#w_icon {
@@ -82,6 +83,7 @@ img{
 
 .weather div{
 	display: inline-block;
+  opacity: 0;
 }
 
 .main-container {
@@ -151,5 +153,7 @@ nav {
     -webkit-transform: scale(1.0);
   }
 }
+
+
 
 
