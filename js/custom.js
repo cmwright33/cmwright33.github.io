@@ -50,7 +50,6 @@ if(differnce > 0 ){
 */
 
 
-
 if(navigator.geolocation){
 
 navigator.geolocation.getCurrentPosition(function(position) {
