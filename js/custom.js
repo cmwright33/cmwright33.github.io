@@ -91,7 +91,7 @@ function callWeather(){
 
 function loadWeatherReport(){
   $('.whoops').on('animationend webkitAnimationEnd', function(){
-      $('.weather').show();
-      $('.spinner').hide();
+      $('.weather').fadeIn(500);
+      $('.spinner').fadeOut(500);
   });
 }
